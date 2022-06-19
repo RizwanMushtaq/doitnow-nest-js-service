@@ -26,6 +26,12 @@ export class TodosService {
     });
   }
 
+  findByUserIdAndDate(userId: number, date: string) {
+    return this.todosRepository.find({
+      where: { userId: userId, date: date },
+    });
+  }
+
   async update(id: number, updateTodoDto: UpdateTodoDto) {
     const todo: Todo = await this.todosRepository.findOneOrFail({
       where: { id: id },

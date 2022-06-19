@@ -33,6 +33,11 @@ export class TodosController {
     return this.todosService.findByUserId(userId);
   }
 
+  @Get('/:userId/:date')
+  findByDate(@Param('userId') userId: number, @Param('date') date: string) {
+    return this.todosService.findByUserIdAndDate(userId, date);
+  }
+
   @Patch(':id')
   update(@Param('id') id: number, @Body() updateTodoDto: UpdateTodoDto) {
     return this.todosService.update(id, updateTodoDto);
