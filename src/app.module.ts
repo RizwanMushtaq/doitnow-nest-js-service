@@ -4,9 +4,16 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { SignupModule } from './signup/signup.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import mysqlConfig from '../mysqlConfig';
 
 @Module({
-  imports: [UsersModule, AuthModule, SignupModule],
+  imports: [
+    TypeOrmModule.forRoot(mysqlConfig),
+    UsersModule,
+    AuthModule,
+    SignupModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
