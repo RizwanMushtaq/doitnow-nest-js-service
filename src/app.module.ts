@@ -5,6 +5,7 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { SignupModule } from './signup/signup.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { TodosModule } from './todos/todos.module';
 import mysqlConfig from '../mysqlConfig';
 
 @Module({
@@ -13,6 +14,7 @@ import mysqlConfig from '../mysqlConfig';
     UsersModule,
     AuthModule,
     SignupModule,
+    TodosModule,
   ],
   controllers: [AppController],
   providers: [AppService],

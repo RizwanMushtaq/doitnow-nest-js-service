@@ -15,6 +15,7 @@ export class UsersController {
     return this.usersService.findAll();
   }
 
+  @ApiBearerAuth('defaultBearerAuth')
   @Get(':userName')
   findOne(@Param('userName') userName: string) {
     return this.usersService.findOne(userName);
@@ -25,6 +26,7 @@ export class UsersController {
   //   return this.usersService.update(+id, updateUserDto);
   // }
 
+  @ApiBearerAuth('defaultBearerAuth')
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.usersService.remove(+id);
