@@ -10,7 +10,14 @@ export class UsersService {
     @InjectRepository(User) private usersRepository: Repository<User>,
   ) {}
 
-  create(createUserDto: CreateUserDto) {
+  async create(createUserDto: CreateUserDto) {
+    const user = await this.usersRepository.findOne({
+      where: { userName: createUserDto.userName },
+    });
+    if (user) {
+      return null;
+    }
+
     const newUser = this.usersRepository.create(createUserDto);
     return this.usersRepository.save(newUser);
   }
@@ -19,10 +26,14 @@ export class UsersService {
     return this.usersRepository.find();
   }
 
-  findOne(userName: string) {
-    return this.usersRepository.findOneOrFail({
+  async findOne(userName: string) {
+    const user = await this.usersRepository.findOne({
       where: { userName: userName },
     });
+    if (!user) {
+      return null;
+    }
+    return user;
   }
 
   // update(id: number, updateUserDto: UpdateUserDto) {
