@@ -1,5 +1,6 @@
 import { MysqlConnectionOptions } from 'typeorm/driver/mysql/MysqlConnectionOptions';
 import { User } from './src/users/entities/user.entity';
+import { Todo } from './src/todos/entities/todo.entity';
 
 const mysqlConfig: MysqlConnectionOptions = {
   type: 'mysql',
@@ -8,7 +9,7 @@ const mysqlConfig: MysqlConnectionOptions = {
   username: 'root',
   password: 'root',
   database: 'doitnow',
-  entities: [User],
+  entities: [User, Todo],
   // entities: ['dist/src/**/*.entity.js'],
   // entities: [__dirname + '/../**/*.entity{.ts,.js'],
   synchronize: true,

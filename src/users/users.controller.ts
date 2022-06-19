@@ -4,18 +4,17 @@ import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from '../auth/jwt-auth-guard';
 
 @ApiTags('users')
+@ApiBearerAuth('defaultBearerAuth')
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  @ApiBearerAuth('defaultBearerAuth')
   @UseGuards(JwtAuthGuard)
   @Get()
   findAll() {
     return this.usersService.findAll();
   }
 
-  @ApiBearerAuth('defaultBearerAuth')
   @Get(':userName')
   findOne(@Param('userName') userName: string) {
     return this.usersService.findOne(userName);

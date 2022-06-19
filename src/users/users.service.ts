@@ -11,7 +11,6 @@ export class UsersService {
   ) {}
 
   create(createUserDto: CreateUserDto) {
-    console.log('In user service');
     const newUser = this.usersRepository.create(createUserDto);
     return this.usersRepository.save(newUser);
   }
@@ -30,10 +29,10 @@ export class UsersService {
   //   return `This action updates a #${id} user`;
   // }
 
-  async remove(id: number) {
-    const user = await this.usersRepository.findOneOrFail({
-      where: { id: id },
-    });
-    return this.usersRepository.remove(user);
-  }
+  // async remove(id: number) {
+  //   const user = await this.usersRepository.findOneOrFail({
+  //     where: { id: id },
+  //   });
+  //   return this.usersRepository.remove(user);
+  // }
 }
