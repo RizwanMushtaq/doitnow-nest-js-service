@@ -5,7 +5,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 export class User {
   @ApiProperty()
   @PrimaryGeneratedColumn()
-  id: number;
+  userId: number;
 
   @ApiProperty()
   @Column()

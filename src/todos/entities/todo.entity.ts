@@ -5,7 +5,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 export class Todo {
   @ApiProperty()
   @PrimaryGeneratedColumn()
-  id: number;
+  todoId: number;
 
   @ApiProperty()
   @Column()

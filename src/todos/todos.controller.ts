@@ -38,13 +38,16 @@ export class TodosController {
     return this.todosService.findByUserIdAndDate(userId, date);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: number, @Body() updateTodoDto: UpdateTodoDto) {
-    return this.todosService.update(id, updateTodoDto);
+  @Patch(':todoId')
+  update(
+    @Param('todoId') todoId: number,
+    @Body() updateTodoDto: UpdateTodoDto,
+  ) {
+    return this.todosService.update(todoId, updateTodoDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.todosService.remove(+id);
+  @Delete(':todoId')
+  remove(@Param('todoId') todoId: number) {
+    return this.todosService.remove(todoId);
   }
 }

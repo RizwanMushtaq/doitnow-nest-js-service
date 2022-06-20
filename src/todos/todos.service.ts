@@ -32,18 +32,18 @@ export class TodosService {
     });
   }
 
-  async update(id: number, updateTodoDto: UpdateTodoDto) {
+  async update(todoId: number, updateTodoDto: UpdateTodoDto) {
     const todo: Todo = await this.todosRepository.findOneOrFail({
-      where: { id: id },
+      where: { todoId: todoId },
     });
     todo.todoItem = updateTodoDto.todoItem;
     const newTodo = this.todosRepository.create(todo);
     return this.todosRepository.save(newTodo);
   }
 
-  async remove(id: number) {
+  async remove(todoId: number) {
     const todo = await this.todosRepository.findOneOrFail({
-      where: { id: id },
+      where: { todoId: todoId },
     });
     return this.todosRepository.remove(todo);
   }
