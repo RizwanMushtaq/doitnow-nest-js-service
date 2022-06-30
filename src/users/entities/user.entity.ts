@@ -9,14 +9,6 @@ export class User {
 
   @ApiProperty()
   @Column()
-  firstName: string;
-
-  @ApiProperty()
-  @Column()
-  lastName: string;
-
-  @ApiProperty()
-  @Column()
   userName: string;
 
   @ApiProperty()

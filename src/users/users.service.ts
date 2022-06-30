@@ -14,7 +14,7 @@ export class UsersService {
 
   async create(createUserDto: CreateUserDto) {
     const user = await this.usersRepository.findOne({
-      where: { userName: createUserDto.userName },
+      where: { userName: createUserDto.username },
     });
     if (user) {
       return null;
@@ -32,9 +32,9 @@ export class UsersService {
     return this.usersRepository.find();
   }
 
-  async findOne(userName: string) {
+  async findOne(username: string) {
     const user = await this.usersRepository.findOne({
-      where: { userName: userName },
+      where: { userName: username },
     });
     if (!user) {
       return null;
