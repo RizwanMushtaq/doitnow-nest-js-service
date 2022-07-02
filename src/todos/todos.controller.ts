@@ -44,7 +44,7 @@ export class TodosController {
   }
 
   @Get('/:userId/:date')
-  findByDate(@Param('userId') userId: number, @Param('date') date: string) {
+  findByDate(@Param('userId') userId: number, @Param('date') date: Date) {
     return this.todosService.findByUserIdAndDate(userId, date);
   }
 

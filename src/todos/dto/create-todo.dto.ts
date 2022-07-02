@@ -5,7 +5,7 @@ export class CreateTodoDto {
   userId: number;
 
   @ApiProperty()
-  date: string;
+  date: Date;
 
   @ApiProperty()
   todoItem: string;

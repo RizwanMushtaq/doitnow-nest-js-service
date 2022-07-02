@@ -26,7 +26,7 @@ export class TodosService {
     });
   }
 
-  findByUserIdAndDate(userId: number, date: string) {
+  findByUserIdAndDate(userId: number, date: Date) {
     return this.todosRepository.find({
       where: { userId: userId, date: date },
     });

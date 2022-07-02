@@ -13,7 +13,7 @@ export class Todo {
 
   @ApiProperty()
   @Column()
-  date: string;
+  date: Date;
 
   @ApiProperty()
   @Column()
