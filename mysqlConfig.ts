@@ -2,6 +2,7 @@ import { MysqlConnectionOptions } from 'typeorm/driver/mysql/MysqlConnectionOpti
 import { User } from './src/users/entities/user.entity';
 import { Todo } from './src/todos/entities/todo.entity';
 
+//database settings
 const mysqlConfig: MysqlConnectionOptions = {
   type: 'mysql',
   host: 'localhost',
