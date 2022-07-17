@@ -16,13 +16,15 @@ import { Todo } from './src/todos/entities/todo.entity';
 //   synchronize: true,
 // };
 
+//cleardb url = mysql://bf972b71490aa6:c95ace94@eu-cdbr-west-03.cleardb.net/heroku_82da633c91a8c1f?reconnect=true
+
 const mysqlConfig: MysqlConnectionOptions = {
   type: 'mysql',
-  host: 'oliadkuxrl9xdugh.chr7pe7iynqr.eu-west-1.rds.amazonaws.com',
-  port: 3306,
-  username: 'ftbsofct0we5g4uh',
-  password: 'pdnmbokgbc4pylp2',
-  database: 'iylb880pcgd1781u',
+  host: 'eu-cdbr-west-03.cleardb.net',
+  // port: 8000,
+  username: 'bf972b71490aa6',
+  password: 'c95ace94',
+  database: 'heroku_82da633c91a8c1f',
   entities: [User, Todo],
   // entities: ['dist/src/**/*.entity.js'],
   // entities: [__dirname + '/../**/*.entity{.ts,.js'],
