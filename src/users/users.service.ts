@@ -13,9 +13,11 @@ export class UsersService {
   ) {}
 
   async create(createUserDto: CreateUserDto) {
+    console.log(createUserDto.userName);
     const user = await this.usersRepository.findOne({
-      where: { userName: createUserDto.username },
+      where: { userName: createUserDto.userName },
     });
+    console.log(user);
     if (user) {
       return null;
     }
@@ -24,6 +26,7 @@ export class UsersService {
       ...createUserDto,
       password: hash,
     };
+    console.log(hashedUser);
     const newUser = this.usersRepository.create(hashedUser);
     return this.usersRepository.save(newUser);
   }
